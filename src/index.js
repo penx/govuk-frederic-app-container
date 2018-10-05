@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 // TODO: feature flags
 const features = {
@@ -46,9 +46,11 @@ export default class ExampleComponent extends Component {
         <div>Top Nav</div>
         <div>Active Module</div>
         <Router>
-          {modules.map(({name, render}) => <Route path={`/${name}`}
-            render={({match, location, history}) => render({match, location, history, features, auth, reference, getReference})}
-          />)}
+          <Switch>
+            {modules.map(({name, render}) => <Route key={name} path={`/${name}`}
+              render={({match, location, history}) => render({match, location, history, features, auth, reference, getReference})}
+            />)}
+          </Switch>
         </Router>
       </div>
     )

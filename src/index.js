@@ -45,15 +45,17 @@ export default class ExampleComponent extends Component {
     return (
       <div>
         <div>Top Nav</div>
-        <div>
-          {modules.map(({name, displayName}) => <Link to={`/${name}`}>{displayName}</Link>)}
-        </div>
         <Router>
-          <Switch>
-            {modules.map(({name, render}) => <Route key={name} path={`/${name}`}
-              render={({match, location, history}) => render({match, location, history, features, auth, reference, getReference})}
-            />)}
-          </Switch>
+          <div>
+            <div>
+              {modules.map(({name, displayName}) => <Link to={`/${name}`}>{displayName || name}</Link>)}
+            </div>
+            <Switch>
+              {modules.map(({name, render}) => <Route key={name} path={`/${name}`}
+                render={({match, location, history}) => render({match, location, history, features, auth, reference, getReference})}
+              />)}
+            </Switch>
+          </div>
         </Router>
       </div>
     )

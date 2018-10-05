@@ -1,10 +1,13 @@
 {
-  "name": "govuk-frederic-app-container",
-  "version": "1.0.0",
+  "name": "@govuk-frederic/app-container",
+  "version": "0.0.1",
   "description": "",
-  "author": "penx",
+  "author": "Alasdair McLeay",
   "license": "MIT",
-  "repository": "penx/govuk-frederic-app-container",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/penx/govuk-frederic-app-container.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -56,5 +59,12 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/penx/govuk-frederic-app-container/issues"
+  },
+  "homepage": "https://github.com/penx/govuk-frederic-app-container#readme",
+  "directories": {
+    "example": "example"
+  }
 }

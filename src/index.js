@@ -46,7 +46,7 @@ export default class ExampleComponent extends Component {
         <div>Top Nav</div>
         <div>Active Module</div>
         <Router>
-          {modules.each(({name, render}) => <Route path={`/${name}`}
+          {modules.map(({name, render}) => <Route path={`/${name}`}
             render={({match, location, history}) => render({match, location, history, features, auth, reference, getReference})}
           />)}
         </Router>

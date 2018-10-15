@@ -11,10 +11,10 @@ The container plans to:
 
 # Frederic projects:
 
-https://github.com/stevesims/govuk-frederic
-https://github.com/penx/govuk-frederic-server
-https://github.com/penx/govuk-frederic-app-container
-https://github.com/penx/govuk-frederic-example
-https://github.com/penx/govuk-frederic-example-module
-https://github.com/penx/govuk-frederic-sample-data
-https://github.com/penx/govuk-frederic-api
+- https://github.com/stevesims/govuk-frederic
+- https://github.com/penx/govuk-frederic-server
+- https://github.com/penx/govuk-frederic-app-container
+- https://github.com/penx/govuk-frederic-example
+- https://github.com/penx/govuk-frederic-example-module
+- https://github.com/penx/govuk-frederic-sample-data
+- https://github.com/penx/govuk-frederic-api

@@ -52,7 +52,7 @@ export default class AppContainer extends Component {
   static defaultProps = {
     title: 'Frederic',
     root: '',
-    notFound: <H1>Test</H1>
+    notFound: <H1>Page Not Found</H1>
   }
 
   render() {

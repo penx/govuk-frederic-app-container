@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ToastProvider } from 'react-toast-notifications'
 
 import { PageHeader, PageNavigation } from 'govuk-frederic'
-import { Header1 } from 'govuk-react'
+import { H1 } from 'govuk-react'
 import asNavLink from 'as-nav-link'
 
 const PageHeaderLogo = asNavLink()(PageHeader.LogoAnchor)
@@ -52,7 +52,7 @@ export default class AppContainer extends Component {
   static defaultProps = {
     title: 'Frederic',
     root: '',
-    notFound: () => <Header1>Test</Header1>
+    notFound: () => <H1>Test</H1>
   }
 
   render() {

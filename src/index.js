@@ -54,7 +54,6 @@ export default class ExampleComponent extends Component {
       <Router>
         <ToastProvider
           autoDismissTimeout={6000}
-          placement='bottom-center'
         >
           <PageHeader logo={<PageHeaderLogo to='/'>Logo Text</PageHeaderLogo>}><PageHeaderLink to='/'>Top Nav</PageHeaderLink></PageHeader>
           <PageNavigation>

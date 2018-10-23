@@ -82,9 +82,6 @@
   "dependencies": {
     "as-nav-link": "^0.1.4"
   },
-  "files": [
-    "dist"
-  ],
   "bugs": {
     "url": "https://github.com/penx/govuk-frederic-app-container/issues"
   },

@@ -8,7 +8,7 @@
     "type": "git",
     "url": "git+https://github.com/penx/govuk-frederic-app-container.git"
   },
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
   "engines": {

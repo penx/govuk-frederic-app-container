@@ -7,7 +7,7 @@ import { PageHeader, PageNavigation } from 'govuk-frederic'
 import asNavLink from 'as-nav-link'
 
 const PageHeaderLogo = asNavLink()(PageHeader.LogoAnchor)
-const PageHeaderLink = asNavLink()(PageHeader.NavAnchor)
+// const PageHeaderLink = asNavLink()(PageHeader.NavAnchor)
 const PageNavigationLink = asNavLink()(PageNavigation.Anchor)
 
 // TODO: feature flags
@@ -36,8 +36,9 @@ function getReference(key) {
   // TODO:
 }
 
-export default class ExampleComponent extends Component {
+export default class AppContainer extends Component {
   static propTypes = {
+    title: PropTypes.string,
     modules: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string,
       displayName: PropTypes.string,
@@ -45,9 +46,14 @@ export default class ExampleComponent extends Component {
     }))
   }
 
+  static defaultProps: {
+    title: 'Frederic'
+  }
+
   render() {
     const {
-      modules
+      modules,
+      title
     } = this.props
 
     return (
@@ -55,7 +61,10 @@ export default class ExampleComponent extends Component {
         <ToastProvider
           autoDismissTimeout={6000}
         >
-          <PageHeader logo={<PageHeaderLogo to='/'>Logo Text</PageHeaderLogo>}><PageHeaderLink to='/'>Top Nav</PageHeaderLink></PageHeader>
+          <PageHeader logo={<PageHeaderLogo to='/'>{title}</PageHeaderLogo>}>
+            {/* TODO: configurable top nav */}
+            {/* <PageHeaderLink to='/'>Top Nav</PageHeaderLink> */}
+          </PageHeader>
           <PageNavigation>
             {modules && modules.map(({name, displayName}) => <PageNavigationLink to={`/${name}`}>{displayName}</PageNavigationLink>)}
           </PageNavigation>

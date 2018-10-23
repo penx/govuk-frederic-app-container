@@ -46,7 +46,7 @@ export default class AppContainer extends Component {
     }))
   }
 
-  static defaultProps: {
+  static defaultProps = {
     title: 'Frederic'
   }
 

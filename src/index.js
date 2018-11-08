@@ -66,21 +66,25 @@ export default class AppContainer extends Component {
         <ToastProvider
           autoDismissTimeout={6000}
         >
-          <Page header={
-            <React.Fragment>
-              <PageHeader logo={<PageHeaderLogo to='/'>{title}</PageHeaderLogo>} />
-              <PageNavigation>
-                {modules && modules.map(({name, displayName}) => <PageNavigationLink to={`/${name}`}>{displayName}</PageNavigationLink>)}
-              </PageNavigation>
-            </React.Fragment>}>
-            <Switch>
-              {modules && modules.map(({name, render}) => <Route key={name} path={`/${name}`}
-                render={({match, location, history}) => render({match, location, history, features, auth, reference, getReference})}
-              />)}
-              <Route exact path='/' render={() => this.props.root} />
-              <Route render={() => this.props.notFound} />
-            </Switch>
-          </Page>
+          <Page
+            header={
+              <React.Fragment>
+                <PageHeader logo={<PageHeaderLogo to='/'>{title}</PageHeaderLogo>} />
+                <PageNavigation>
+                  {modules && modules.map(({name, displayName}) => <PageNavigationLink to={`/${name}`}>{displayName}</PageNavigationLink>)}
+                </PageNavigation>
+              </React.Fragment>
+            }
+            // We use main rather than children so that child modules can decide whether to wrap with Page.Main or not
+            main={() =>
+              <Switch>
+                {modules && modules.map(({name, render}) => <Route key={name} path={`/${name}`}
+                  render={({match, location, history}) => render({match, location, history, features, auth, reference, getReference})}
+                />)}
+                <Route exact path='/' render={() => this.props.root} />
+                <Route render={() => this.props.notFound} />
+              </Switch>
+            } />
         </ToastProvider>
       </Router>
     )

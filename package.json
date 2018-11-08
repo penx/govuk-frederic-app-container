@@ -25,7 +25,7 @@
   "peerDependencies": {
     "emotion": ">=9",
     "govuk-frederic": ">=0.1.2",
-    "govuk-react": ">=0.2.12",
+    "govuk-react": ">=0.3.1",
     "prop-types": ">=15",
     "react-dom": "^15.0.0 || ^16.0.0",
     "react-emotion": ">=9",
@@ -71,7 +71,7 @@
     "eslint-plugin-standard": "^3.1.0",
     "gh-pages": "^1.2.0",
     "govuk-frederic": "^0.1.2",
-    "govuk-react": "^0.2.12",
+    "govuk-react": "^0.3.1",
     "jest": "^23.6.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",

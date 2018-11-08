@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ToastProvider } from 'react-toast-notifications'
 
 import { PageHeader, PageNavigation } from 'govuk-frederic'
-import { H1 } from 'govuk-react'
+import { H1, Page } from 'govuk-react'
 import asNavLink from 'as-nav-link'
 
 const PageHeaderLogo = asNavLink()(PageHeader.LogoAnchor)
@@ -66,20 +66,21 @@ export default class AppContainer extends Component {
         <ToastProvider
           autoDismissTimeout={6000}
         >
-          <PageHeader logo={<PageHeaderLogo to='/'>{title}</PageHeaderLogo>}>
-            {/* TODO: configurable top nav */}
-            {/* <PageHeaderLink to='/'>Top Nav</PageHeaderLink> */}
-          </PageHeader>
-          <PageNavigation>
-            {modules && modules.map(({name, displayName}) => <PageNavigationLink to={`/${name}`}>{displayName}</PageNavigationLink>)}
-          </PageNavigation>
-          <Switch>
-            {modules && modules.map(({name, render}) => <Route key={name} path={`/${name}`}
-              render={({match, location, history}) => render({match, location, history, features, auth, reference, getReference})}
-            />)}
-            <Route exact path='/' render={() => this.props.root} />
-            <Route render={() => this.props.notFound} />
-          </Switch>
+          <Page header={
+            <React.Fragment>
+              <PageHeader logo={<PageHeaderLogo to='/'>{title}</PageHeaderLogo>} />
+              <PageNavigation>
+                {modules && modules.map(({name, displayName}) => <PageNavigationLink to={`/${name}`}>{displayName}</PageNavigationLink>)}
+              </PageNavigation>
+            </React.Fragment>}>
+            <Switch>
+              {modules && modules.map(({name, render}) => <Route key={name} path={`/${name}`}
+                render={({match, location, history}) => render({match, location, history, features, auth, reference, getReference})}
+              />)}
+              <Route exact path='/' render={() => this.props.root} />
+              <Route render={() => this.props.notFound} />
+            </Switch>
+          </Page>
         </ToastProvider>
       </Router>
     )
